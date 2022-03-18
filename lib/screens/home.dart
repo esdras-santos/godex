@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:dao/screens/vote_components/create_proposal_screen.dart';
+import 'package:dao/screens/vote_components/proposal_screen.dart';
 import 'package:dao/screens/vote_components/vote_screen.dart';
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
@@ -18,7 +20,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Widget form = VoteScreen();
+  Widget form = CreateProposal();
   String mode = "swap";
   bool connected = false;
   String uiaddr = '';
