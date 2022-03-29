@@ -39,7 +39,7 @@ class _DefaultAppbarState extends State<DefaultAppbar> {
       backgroundColor: Colors.white,
       automaticallyImplyLeading: false,
       title: shader(
-        "Canario Swap",
+        "GoDeFi",
         TextStyle(fontWeight: FontWeight.bold),
       ),
       flexibleSpace: Container(
