@@ -3,7 +3,7 @@ import 'package:flutter_web3/flutter_web3.dart';
 import '../pool_components/pool_screen.dart';
 import '../swap_components/form/swap_form.dart';
 import '../vote_components/vote_screen.dart';
-import 'account.dart';
+
 
 class DefaultAppbar extends StatefulWidget {
   const DefaultAppbar({ Key? key }) : super(key: key);
@@ -15,22 +15,22 @@ class DefaultAppbar extends StatefulWidget {
 class _DefaultAppbarState extends State<DefaultAppbar> {
   bool connected = false;
   String uiaddr = '0x0000000000000000000000000000000000000000';
-  Acc account = Acc();
+  
 
 
   @override
   void initState(){
     super.initState();
     // isConnected();
+    isCon().then((value) {
+      setState((){
+        connected = value;
+      });
+    });
   }
 
-  void isConnected(){
-    setState((){
-      if(ethereum!.isConnected()){
-        ethereum!.getAccounts().then((value) => uiaddr = value[0]);
-        print(uiaddr); // Get all accounts in node disposal
-      }
-    });
+  Future<bool> isCon() async{
+    return ethereum!.isConnected() && (await ethereum!.getAccounts()).isNotEmpty;
   }
 
   @override
@@ -124,7 +124,7 @@ class _DefaultAppbarState extends State<DefaultAppbar> {
 
   Widget connectButton() {
     Size size = MediaQuery.of(context).size;
-    return !ethereum!.isConnected() ? Container(
+    return !connected ? Container(
       height: 40.0,
       width: size.width * 0.1,
       margin: EdgeInsets.symmetric(vertical: 5),
@@ -139,8 +139,9 @@ class _DefaultAppbarState extends State<DefaultAppbar> {
                   .requestAccount();
               setState((){
                 uiaddr = accs[0];
+                connected = true;
               }); // Get all accounts in node disposal
-              account.acc = accs[0]; // [foo,bar]
+              
             } on EthereumUserRejected {
               print('User rejected the modal');
             }

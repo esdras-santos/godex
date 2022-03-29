@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_web3/flutter_web3.dart';
 
+import '../utils/ABIs.dart';
+import '../utils/AMM.dart';
 import '../utils/custom_rect_tween.dart';
 import '../utils/default_appbar.dart';
 import '../utils/hero_dialog_route.dart';
+import 'liquidity_button.dart';
 
 class AddLiquidity extends StatefulWidget {
   const AddLiquidity({ Key? key }) : super(key: key);
@@ -16,18 +20,32 @@ class AddLiquidity extends StatefulWidget {
 
 class _AddLiquidityState extends State<AddLiquidity> {
   
-  String token1 = "GOD";
-  String token2 = "CKB";
-  List<Widget> tokensList1 = [];
-  List<Widget> tokensList2 = [];
-  List<String> cryptoList = ["GOD", "ETH", "CKB"];
+  String ckbAmount = '';
+  String tokenAmount = '';
+  String tokenPool = '';
+  String token = "GOD";
+  String exchangeaddr = '0x02895eF49A562eb6f65C7988c581f5356B284862';
   
-
+  List<Widget> tokensList = [];
+  List<String> cryptoList = ["GOD"];
+  Map tokenToIndex = {"GOD":1};
+  late Contract factory;
+  ABIs abi = ABIs();
+  
   @override
   void initState(){
     super.initState();
-    tokensList1 = tl(1);
-    tokensList2 = tl(2);
+    tokensList = tl();
+    initPool();
+  }
+
+  void initPool() async {
+    var token = tokenContract("0x9ED599eF3d45AbdF6DCCa7E225C16fCe527283ED");
+    var pool = await token.call<BigInt>('balanceOf',["0x02895eF49A562eb6f65C7988c581f5356B284862"]);
+    setState((){
+      tokenPool = pool.toString();
+    });
+    
   }
 
   @override
@@ -87,36 +105,9 @@ class _AddLiquidityState extends State<AddLiquidity> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            InkWell(
-                              onTap: (){
-                                Navigator.of(context).push(HeroDialogRoute(builder: (context) {
-                                  return _listCoinsPopupCard(1, _heroAddLiquidity+"1");
-                                }));
-                              },
-                              child: Hero(
-                                tag: _heroAddLiquidity+"1",
-                                // createRectTween: (begin, end) {
-                                //   return CustomRectTween(begin: begin!, end: end!);
-                                // },
-                                child: Container(
-                                    width: 100,
-                                    child: Row(
-                                      children: [
-                                        Material(
-                                          color: Colors.black12,
-                                          child: Text(token1, style: TextStyle(color: Colors.white,fontSize: 20, fontWeight: FontWeight.bold))),
-                                        Icon(
-                                          Icons.arrow_drop_down_sharp,
-                                          color: Colors.white,
-                                          size: 30,
-                                        )
-                                      ]
-                                    )
-                                  ),
-                              
-                              ),
-                            ),
+                          children: [     
+                            Text("CKB", style: TextStyle(color: Colors.white,fontSize: 20, fontWeight: FontWeight.bold)),
+                            
                             InkWell(
                               onTap: (){
                                 Navigator.of(context).push(HeroDialogRoute(builder: (context) {
@@ -134,7 +125,7 @@ class _AddLiquidityState extends State<AddLiquidity> {
                                       children: [
                                         Material(
                                           color: Colors.black12,
-                                          child: Text(token2, style: TextStyle(color: Colors.white,fontSize: 20, fontWeight: FontWeight.bold))),
+                                          child: Text(token, style: TextStyle(color: Colors.white,fontSize: 20, fontWeight: FontWeight.bold))),
                                         Icon(
                                           Icons.arrow_drop_down_sharp,
                                           color: Colors.white,
@@ -161,7 +152,7 @@ class _AddLiquidityState extends State<AddLiquidity> {
                             children: [
                               Container(
                                 padding: const EdgeInsets.only(left:8.0),
-                                width: 340,
+                                width: 360,
                                 child: TextFormField(
                                   textAlign: TextAlign.left,
                                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -176,8 +167,14 @@ class _AddLiquidityState extends State<AddLiquidity> {
                                     hintText: "0.0",
                                     border: InputBorder.none,
                                   ),
-                                  onChanged: (value) {
+                                  onChanged: (value) async {
+                                    var ethpool = await provider!.getBalance(exchangeaddr);
                                     setState((){
+                                      ckbAmount = value;
+                                      
+                                      tokenAmount = "${liquidityTokenAmount(int.parse(value), ethpool.toInt(), int.parse(tokenPool))}";
+                                      
+                                      print(tokenAmount);
                                       
                                     });
                                   },
@@ -185,27 +182,12 @@ class _AddLiquidityState extends State<AddLiquidity> {
                               ),
                               Align(
                                 alignment: Alignment.centerLeft, 
-                                child: Text(token1, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                child: Text("CKB", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                               ),
                             ],
                           ),
                         ),
-                        Ink(
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            shape: BoxShape.circle
-                          ),
-                          child: IconButton(
-                            iconSize: 30,
-                            icon: const Icon(Icons.swap_vert),
-                            tooltip: 'Swap order',
-                            onPressed: () {
-                              setState(() {
-                                
-                              });
-                            },
-                          ),
-                        ),
+                        
                         Container(
                           margin: EdgeInsets.symmetric(horizontal: 10),
                           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -219,34 +201,22 @@ class _AddLiquidityState extends State<AddLiquidity> {
                             children: [
                               Container(
                                 padding: const EdgeInsets.only(left:8.0),
-                                width: 340,
-                                child: TextFormField(
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                                  // keyboardType: TextInputType.number,
-                                  inputFormatters: [
-                                    CurrencyTextInputFormatter(maxInputValue: 99999999999999),
-                                  ],
-                                  cursorColor: Colors.green,
-                                  decoration: InputDecoration(
-                                    labelStyle: TextStyle(fontSize: 25),
-                                    hintStyle: TextStyle(fontSize: 25),
-                                    hintText: "0.0",
-                                    border: InputBorder.none,
-                                  ),
-                                  onChanged: (value) {
-                                    setState((){
-                                    });
-                                  },
+                                width: 360,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                child: Text(tokenAmount, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black)),
+                                
                               ),
                               Align(
                                 alignment: Alignment.centerLeft, 
-                                child: Text(token2, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                child: Text(token, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                               ),
                             ],
                           ),
                         ),
+                        LiquidityButton(amount1: ckbAmount, amount2: tokenAmount, tokenSymbol: token)
                       ],
                     ),
                   ),
@@ -285,7 +255,7 @@ class _AddLiquidityState extends State<AddLiquidity> {
                       SizedBox(height: 10),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: t == 1 ? tokensList1 : tokensList2,
+                        children: tokensList,
                       ),
                       SizedBox(height: 10),
                     ]
@@ -299,54 +269,44 @@ class _AddLiquidityState extends State<AddLiquidity> {
     );
   }
 
-  List<Widget> tl(int t){
+  List<Widget> tl(){
     List<Widget> tokensList = [];
     tokensList.add(
       InkWell(
-        onTap: (){
+        onTap: () async {
+          var tokenaddress = await factory.call<String>('getTokenWithId', [tokenToIndex[cryptoList[0]]]);
+          var exchangeaddr = await factory.call<String>('getExchange', [tokenaddress]);
+          var exchange = exchangeContract(exchangeaddr);
+          var tokenc = tokenContract(tokenaddress);
+          var tokenpool = await tokenc.call<BigInt>('balanceOf',[exchangeaddr]);
           setState((){
-            if(t == 1){
-              token1 = cryptoList[0];
-            } else{
-              token2 = cryptoList[0];
-            }
+            tokenPool = tokenpool.toString();
+            token = cryptoList[0];
+            exchangeaddr = exchangeaddr;
           });
           Navigator.pop(context);
         },
         child: Text(cryptoList[0], style: TextStyle(color: Colors.white,fontSize: 18, fontWeight: FontWeight.bold),)
       )
     );
-    tokensList.add(
-      InkWell(
-        onTap: (){
-          setState((){
-            if(t == 1){
-              token1 = cryptoList[1];
-            } else{
-              token2 = cryptoList[1];
-            }
-          });
-          Navigator.pop(context);
-        },
-        child: Text(cryptoList[1], style: TextStyle(color: Colors.white,fontSize: 18, fontWeight: FontWeight.bold),)
-      )
-    );
-    tokensList.add(
-      InkWell(
-        onTap: (){
-          setState((){
-            if(t == 1){
-              token1 = cryptoList[2];
-            } else{
-              token2 = cryptoList[2];
-            }
-          });
-          Navigator.pop(context);
-        },
-        child: Text(cryptoList[2], style: TextStyle(color: Colors.white,fontSize: 18, fontWeight: FontWeight.bold),)
-      )
-    );
+    
     return tokensList;
+  }
+
+  Contract tokenContract(String address){
+    return Contract(
+      address, 
+      abi.token,
+      provider!
+    );
+  }
+
+  Contract exchangeContract(String address){
+    return Contract(
+      address, 
+      Interface(abi.exchange),
+      provider!.getSigner()
+    );
   }
 }
 

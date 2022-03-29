@@ -1,9 +1,12 @@
 import 'package:dao/screens/swap_components/swap_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_web3/flutter_web3.dart';
 
+import '../../utils/ABIs.dart';
 import '../../utils/default_appbar.dart';
 import '../../utils/hero_dialog_route.dart';
+import '../../utils/AMM.dart';
 
 
 class SwapForm extends StatefulWidget {
@@ -17,9 +20,9 @@ String _heroSwap = "heroswap";
 class _SwapFormState extends State<SwapForm> {
   String coin1 = "images/algologo.png";
   String coin2 = "images/canary.jpg";
-  String coin1name = "ALGO";
-  String coin2name = "ETH";
-  String type = "algo_to_token"; 
+  String coin1name = "CKB";
+  String coin2name = "GOD";
+  String type = "ckb_to_token";
   String amount = "0.0";
   String ammAmount = "0.0";
   bool swaporder = false;
@@ -27,27 +30,44 @@ class _SwapFormState extends State<SwapForm> {
   TextEditingController _token2controller = TextEditingController();
   String token1Amount = '';
   String token2Amount = '';
-  
+  String token1Pool = '';
+  String token2Pool = '';
+  String exchange1addr = '0x02895eF49A562eb6f65C7988c581f5356B284862';
+  String exchange2addr = '';
   List<Widget> tokensList1 = [];
   List<Widget> tokensList2 = [];
 
-  List<String> cryptoList = ["GOD", "ETH", "CKB"];
+  List<String> cryptoList = ["GOD", "CKB"];
+  Map tokenToIndex = {"GOD":1};
+  late Contract factory;
+  ABIs abi = ABIs();
 
-
+  _SwapFormState(){
+    factory = Contract(
+      '0xBE4AE2Af3a222de98e8b537Ae7650c7aF1723A88', 
+      abi.factory,
+      provider!.getSigner()
+    );
+  }
 
   @override
   void initState(){
     super.initState();
     tokensList1 = tl(1);
     tokensList2 = tl(2);
+    initPool();
   }
 
-  int amm(int amount, int input_reserve, int output_reserve){
-    int input_amount_with_fee = amount * 997;
-    int numerator = input_amount_with_fee * output_reserve;
-    int denominator = (input_reserve * 1000) + input_amount_with_fee;
-    return (numerator ~/ denominator);
+  void initPool() async {
+    var token = tokenContract("0x9ED599eF3d45AbdF6DCCa7E225C16fCe527283ED");
+    var pool = await token.call<BigInt>('balanceOf',["0x02895eF49A562eb6f65C7988c581f5356B284862"]);
+    setState((){
+      token1Pool = pool.toString();
+    });
+    
   }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -134,10 +154,20 @@ class _SwapFormState extends State<SwapForm> {
                                     hintText: "0.0",
                                     border: InputBorder.none,
                                   ),
-                                  onChanged: (value) {
+                                  onChanged: (value) async {
+                                    var ethpool = await provider!.getBalance(exchange1addr);
                                     setState((){
                                       token1Amount = value;
-                                      _token2controller = TextEditingController(text: 'Initial value');
+                                      
+                                      if(type == "token_to_token"){
+                                        token2Amount = "${amm(int.parse(value), ethpool.toInt(), int.parse(token1Pool))}";
+                                      } else if(type == "token_to_ckb"){
+                                        token2Amount = "${amm(int.parse(value), int.parse(token1Pool), ethpool.toInt())}";
+                                      } else if(type == "ckb_to_token"){
+                                        token2Amount = "${amm(int.parse(value), ethpool.toInt(), int.parse(token1Pool))}";
+                                      }
+                                      print(token2Amount);
+                                      
                                     });
                                   },
                                 ),
@@ -183,7 +213,16 @@ class _SwapFormState extends State<SwapForm> {
                             tooltip: 'Swap order',
                             onPressed: () {
                               setState(() {
-                                
+                                var aux = coin1name;
+                                coin1name = coin2name;
+                                coin2name = aux; 
+                                if(coin2name == "CKB"){
+                                  type = "ckb_to_token";
+                                } else if(coin2name != "CKB" && coin1name != "CKB"){
+                                  type = "token_to_token";
+                                } else {
+                                  type = "token_to_ckb";
+                                }
                               });
                             },
                           ),
@@ -202,27 +241,12 @@ class _SwapFormState extends State<SwapForm> {
                               Container(
                                 padding: const EdgeInsets.only(left:8.0),
                                 width: 360,
-                                child: TextFormField(
-                                  textAlign: TextAlign.left,
-                                  controller: _token2controller,
-                                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                                  // keyboardType: TextInputType.number,
-                                  inputFormatters: [
-                                    CurrencyTextInputFormatter(maxInputValue: 99999999999999),
-                                  ],
-                                  cursorColor: Colors.green,
-                                  decoration: InputDecoration(
-                                    labelStyle: TextStyle(fontSize: 25),
-                                    hintStyle: TextStyle(fontSize: 25),
-                                    hintText: "0.0",
-                                    border: InputBorder.none,
-                                  ),
-                                  onChanged: (value) {
-                                    setState((){
-                                      
-                                    });
-                                  },
+                                height: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                child: Text(token2Amount, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black)),
+                                
                               ),
                               Align(
                                 alignment: Alignment.centerLeft, 
@@ -254,7 +278,7 @@ class _SwapFormState extends State<SwapForm> {
                             ],
                           ),
                         ),
-                        SwapButton(type: type, amount: amount)
+                        SwapButton(type: type, amount1: amount, amount2: "1", tokenIndex1: 1, tokenIndex2: 2,)
                       ],
                     ),
                   ),
@@ -264,6 +288,22 @@ class _SwapFormState extends State<SwapForm> {
           ],
         ),
       ),
+    );
+  }
+
+  Contract tokenContract(String address){
+    return Contract(
+      address, 
+      abi.token,
+      provider!
+    );
+  }
+
+  Contract exchangeContract(String address){
+    return Contract(
+      address, 
+      Interface(abi.exchange),
+      provider!.getSigner()
     );
   }
 
@@ -311,12 +351,22 @@ class _SwapFormState extends State<SwapForm> {
     List<Widget> tokensList = [];
     tokensList.add(
       InkWell(
-        onTap: (){
+        onTap: () async {
+          var tokenaddress = await factory.call<String>('getTokenWithId', [tokenToIndex[cryptoList[0]]]);
+          var exchangeaddr = await factory.call<String>('getExchange', [tokenaddress]);
+          var exchange = exchangeContract(exchangeaddr);
+          var token = tokenContract(tokenaddress);
+          var tokenpool = await token.call<BigInt>('balanceOf',[exchangeaddr]);
           setState((){
+            exchange1addr = exchangeaddr;
             if(t == 1){
+              token1Pool = tokenpool.toString();
               coin1name = cryptoList[0];
+              exchange1addr = exchangeaddr;
             } else{
+              token2Pool = tokenpool.toString();
               coin2name = cryptoList[0];
+              exchange2addr = exchangeaddr;
             }
           });
           Navigator.pop(context);
@@ -324,36 +374,7 @@ class _SwapFormState extends State<SwapForm> {
         child: Text(cryptoList[0], style: TextStyle(color: Colors.white,fontSize: 18, fontWeight: FontWeight.bold),)
       )
     );
-    tokensList.add(
-      InkWell(
-        onTap: (){
-          setState((){
-            if(t == 1){
-              coin1name = cryptoList[1];
-            } else{
-              coin2name = cryptoList[1];
-            }
-          });
-          Navigator.pop(context);
-        },
-        child: Text(cryptoList[1], style: TextStyle(color: Colors.white,fontSize: 18, fontWeight: FontWeight.bold),)
-      )
-    );
-    tokensList.add(
-      InkWell(
-        onTap: (){
-          setState((){
-            if(t == 1){
-              coin1name = cryptoList[2];
-            } else{
-              coin2name = cryptoList[2];
-            }
-          });
-          Navigator.pop(context);
-        },
-        child: Text(cryptoList[2], style: TextStyle(color: Colors.white,fontSize: 18, fontWeight: FontWeight.bold),)
-      )
-    );
+    
     return tokensList;
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web3/flutter_web3.dart';
 
+import '../utils/ABIs.dart';
 import '../utils/default_appbar.dart';
 
 class CreateProposal extends StatefulWidget {
@@ -10,8 +12,13 @@ class CreateProposal extends StatefulWidget {
 }
 
 class _CreateProposalState extends State<CreateProposal> {
+  ABIs abi = ABIs();
   String action = "Transfer Token";
   String token = "GOD";
+  String amount = "";
+  String to = "";
+  String title = "";
+  String description = "";
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +123,7 @@ class _CreateProposalState extends State<CreateProposal> {
                           ),
                           onChanged: (value) {
                             setState((){
-                              
+                              to = value;
                             });
                           },
                         ),
@@ -149,7 +156,7 @@ class _CreateProposalState extends State<CreateProposal> {
                           ),
                           onChanged: (value) {
                             setState((){
-                              
+                              amount = value;
                             });
                           },
                         ),
@@ -198,7 +205,7 @@ class _CreateProposalState extends State<CreateProposal> {
                       ),
                       onChanged: (value) {
                         setState((){
-                          
+                          title = "#$value#";
                         });
                       },
                     ),
@@ -229,7 +236,7 @@ class _CreateProposalState extends State<CreateProposal> {
                       ),
                       onChanged: (value) {
                         setState((){
-                          
+                          description = value;
                         });
                       },
                     ),
@@ -240,8 +247,26 @@ class _CreateProposalState extends State<CreateProposal> {
                   width: 580,
                   margin: EdgeInsets.symmetric(vertical: 5),
                   child: RaisedButton(
-                    onPressed: () {
-                     
+                    onPressed: () async {
+                      var governor = governorContract("0x951e8BA2FDf023b534DCA54cd0a4A74889F94b3d");
+                      var treasury = treasuryContract("0xBE4AE2Af3a222de98e8b537Ae7650c7aF1723A88");
+
+                      var functionCall = treasury.interface.getSighash("transfer(address,uint256)");
+                      final proposaltx = await governor.send('propose',
+                        [[treasury.address], [0], [functionCall], title+description+"%a$to%d$amount"],
+                        TransactionOverride(
+                          gasPrice: BigInt.from(6000000),
+                        ),
+                      );
+                      final proposalReceipt = proposaltx.wait();
+                      governor.on("ProposalCreated", (proposalId, proposer, targets, values, signatures, calldatas, startBlock, endBlock, description){
+                        print("proposalId: $proposalId");
+                        print("proposer: $proposer");
+                        print("values: $values");
+                        print("calldatas: $calldatas");
+                        print("description: $description");
+                        print("targets: $targets");
+                      });
                     },
                     shape:
                         RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -280,6 +305,22 @@ class _CreateProposalState extends State<CreateProposal> {
           ),
         ),
       ),
+    );
+  }
+
+  Contract governorContract(String address){
+    return Contract(
+      address, 
+      Interface(abi.governor),
+      provider!.getSigner()
+    );
+  }
+
+  Contract treasuryContract(String address){
+    return Contract(
+      address, 
+      abi.treasury,
+      provider!
     );
   }
 }
