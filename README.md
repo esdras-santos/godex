@@ -5,6 +5,20 @@ which allows the addition of new functionality to the DAO. Right now GoDex have 
 
 ## Warning: the UI is not finished yet
 
+### To run the frontend you can access this public link [HERE](https://esdras-santos.github.io/godefi/#/) or follow the steps bellow.
+
+1. [Install flutter](https://docs.flutter.dev/get-started/install)
+
+2. Clone this repositore
+
+```shell
+git clone https://github.com/esdras-santos/canario
+```
+
+3. Inside the repositore type run: 
+```shell
+flutter run --release
+
 ## Addresses
 
 ### Governance
