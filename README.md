@@ -13,7 +13,7 @@ And if GoDex is implemented on the mainet GoDex will have a flash loan functiona
 2. Clone this repositore
 
 ```shell
-git clone https://github.com/esdras-santos/canario
+git clone https://github.com/esdras-santos/godex
 ```
 
 3. Inside the repositore type run: 
