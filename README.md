@@ -22,22 +22,4 @@ flutter run --release
 ```
 
 
-## Screens
-
-### Swap Screen
-
-![alt text](https://github.com/esdras-santos/godex/blob/master/extra_media/swap.PNG?raw=true)
-
-### Pool screens
-
-![alt text](https://github.com/esdras-santos/godex/blob/master/extra_media/pool1.PNG?raw=true)
-
-![alt text](https://github.com/esdras-santos/godex/blob/master/extra_media/pool2.PNG?raw=true)
-
-### Vote Screens 
-
-![alt text](https://github.com/esdras-santos/godex/blob/master/extra_media/vote1.PNG?raw=true)
-
-![alt text](https://github.com/esdras-santos/godex/blob/master/extra_media/vote2.PNG?raw=true)
-
 
