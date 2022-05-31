@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
 
 contract GOD is ERC20Votes{
-    uint256 public maxSupply = 100000000e8;
+    uint256 public maxSupply = 100000000e18;
 
     constructor() ERC20("GOD","GOD") ERC20Permit("GOD") {
         _mint(msg.sender, maxSupply);

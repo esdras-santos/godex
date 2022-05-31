@@ -1,8 +1,10 @@
+import 'package:dao/screens/utils/MetaMask.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web3/flutter_web3.dart';
 import '../pool_components/pool_screen.dart';
 import '../swap_components/form/swap_form.dart';
 import '../vote_components/vote_screen.dart';
+import 'package:provider/provider.dart';
 
 
 class DefaultAppbar extends StatefulWidget {
@@ -35,41 +37,46 @@ class _DefaultAppbarState extends State<DefaultAppbar> {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.white,
-      automaticallyImplyLeading: false,
-      title: shader(
-        "GoDeFi",
-        TextStyle(fontWeight: FontWeight.bold),
-      ),
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-                Colors.greenAccent,
-                Colors.black45,
-                Colors.black45,
-                Colors.black54,
-                Colors.black54,
-                Colors.black87,
-                Colors.black
-              ],
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              // stops: [0.0, 1.0],
-              tileMode: TileMode.clamp),
-        ),
-      ),
-      actions: <Widget>[
-        NavigatorButton("Swap", SwapForm()),
-        SizedBox(width: 5,),
-        NavigatorButton("Pool", Pool()),
-        SizedBox(width: 5,),
-        NavigatorButton("Vote", VoteScreen()),
-        SizedBox(width: 100,),
-        connectButton(),
-        SizedBox(width: 20,),
-      ],
+    return ChangeNotifierProvider(
+      create: (context) => MetaMaskProvider()..init(),
+      builder: (context, child) {
+        return AppBar(
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          title: shader(
+            "GoDeFi",
+            TextStyle(fontWeight: FontWeight.bold),
+          ),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [
+                    Colors.greenAccent,
+                    Colors.black45,
+                    Colors.black45,
+                    Colors.black54,
+                    Colors.black54,
+                    Colors.black87,
+                    Colors.black
+                  ],
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  // stops: [0.0, 1.0],
+                  tileMode: TileMode.clamp),
+            ),
+          ),
+          actions: <Widget>[
+            NavigatorButton("Swap", SwapForm()),
+            SizedBox(width: 5,),
+            NavigatorButton("Pool", Pool()),
+            SizedBox(width: 5,),
+            NavigatorButton("Vote", VoteScreen()),
+            SizedBox(width: 100,),
+            connectButton(),
+            SizedBox(width: 20,),
+          ],
+        );
+      }
     );
   }
 

@@ -1,8 +1,8 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\Diamond.sol": {
-      "lastModificationDate": 1648143615610,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\Diamond.sol": {
+      "lastModificationDate": 1650750167997,
       "contentHash": "f335250918c9b5805d3b852357086146",
       "sourceName": "contracts/diamond/Diamond.sol",
       "solcConfig": {
@@ -39,8 +39,8 @@
         "Diamond"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\libraries\\LibDiamond.sol": {
-      "lastModificationDate": 1648299892180,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\libraries\\LibDiamond.sol": {
+      "lastModificationDate": 1650750422114,
       "contentHash": "6ab72d1b9391fb95c60aaa303f9bed1f",
       "sourceName": "contracts/diamond/libraries/LibDiamond.sol",
       "solcConfig": {
@@ -76,8 +76,8 @@
         "LibDiamond"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\interfaces\\IDiamondCut.sol": {
-      "lastModificationDate": 1646771798511,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\interfaces\\IDiamondCut.sol": {
+      "lastModificationDate": 1650749480465,
       "contentHash": "3d267178319c5e7ba5621f8cd8340550",
       "sourceName": "contracts/diamond/interfaces/IDiamondCut.sol",
       "solcConfig": {
@@ -111,8 +111,8 @@
         "IDiamondCut"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\upgradeInitializers\\DiamondInit.sol": {
-      "lastModificationDate": 1648300841976,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\upgradeInitializers\\DiamondInit.sol": {
+      "lastModificationDate": 1650750479171,
       "contentHash": "25958b664ee2b0db77c150fce705f138",
       "sourceName": "contracts/diamond/upgradeInitializers/DiamondInit.sol",
       "solcConfig": {
@@ -152,8 +152,8 @@
         "DiamondInit"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\interfaces\\IDiamondLoupe.sol": {
-      "lastModificationDate": 1646771798514,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\interfaces\\IDiamondLoupe.sol": {
+      "lastModificationDate": 1650749480481,
       "contentHash": "5c2fe4932744a1e3e72711627cbd7edf",
       "sourceName": "contracts/diamond/interfaces/IDiamondLoupe.sol",
       "solcConfig": {
@@ -187,8 +187,8 @@
         "IDiamondLoupe"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\interfaces\\IERC173.sol": {
-      "lastModificationDate": 1646771798520,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\interfaces\\IERC173.sol": {
+      "lastModificationDate": 1650749480481,
       "contentHash": "bb4c896ca0f6249adff834b3529636ef",
       "sourceName": "contracts/diamond/interfaces/IERC173.sol",
       "solcConfig": {
@@ -222,8 +222,8 @@
         "IERC173"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\interfaces\\IERC165.sol": {
-      "lastModificationDate": 1646771798517,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\interfaces\\IERC165.sol": {
+      "lastModificationDate": 1650749480481,
       "contentHash": "77054f3cfef6c65157665ff1845a6461",
       "sourceName": "contracts/diamond/interfaces/IERC165.sol",
       "solcConfig": {
@@ -257,8 +257,8 @@
         "IERC165"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\facets\\DiamondLoupeFacet.sol": {
-      "lastModificationDate": 1646771798497,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\facets\\DiamondLoupeFacet.sol": {
+      "lastModificationDate": 1650749480450,
       "contentHash": "541204400cbe4dd523eb5f21ae92a528",
       "sourceName": "contracts/diamond/facets/DiamondLoupeFacet.sol",
       "solcConfig": {
@@ -296,8 +296,8 @@
         "DiamondLoupeFacet"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\facets\\Treasury.sol": {
-      "lastModificationDate": 1648391492515,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\facets\\Treasury.sol": {
+      "lastModificationDate": 1650749480465,
       "contentHash": "9bf48f55fff3a9841d54bfd7bb4af40a",
       "sourceName": "contracts/diamond/facets/Treasury.sol",
       "solcConfig": {
@@ -334,9 +334,9 @@
         "Treasury"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
-      "lastModificationDate": 1648391418042,
-      "contentHash": "a44d1a099633876550ad2476b21bafbe",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1650749485371,
+      "contentHash": "5a9b6e6be791df9338cd41ba9ece9009",
       "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -369,9 +369,9 @@
         "IERC20"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
-      "lastModificationDate": 1648391418066,
-      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
+      "lastModificationDate": 1650749485403,
+      "contentHash": "7e3e6992395030ccb281dc67c1a8ae2f",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -406,9 +406,9 @@
         "IERC20Metadata"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
-      "lastModificationDate": 1648391417357,
-      "contentHash": "bab063ddd80e9cc9e313361fef7ef07f",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1650749485371,
+      "contentHash": "06d4ec11eea70a13e9d09de937bd3567",
       "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -445,9 +445,9 @@
         "ERC20"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
-      "lastModificationDate": 1648391417050,
-      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1650749485496,
+      "contentHash": "e7f98c33ad1d39d8a6661bf0804fae36",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -480,9 +480,9 @@
         "Context"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\access\\AccessControl.sol": {
-      "lastModificationDate": 1648391416941,
-      "contentHash": "76cae8e1eb9c27e818b0b08e1527f731",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\access\\AccessControl.sol": {
+      "lastModificationDate": 1650749484793,
+      "contentHash": "60e10fa61178af1b2c5b433511cc3ae9",
       "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -520,9 +520,9 @@
         "AccessControl"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\access\\IAccessControl.sol": {
-      "lastModificationDate": 1648391417882,
-      "contentHash": "57c84298234411cea19c7c284d86be8b",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\access\\IAccessControl.sol": {
+      "lastModificationDate": 1650749484793,
+      "contentHash": "b2c039b7ec738e0241865b8e3cc42297",
       "sourceName": "@openzeppelin/contracts/access/IAccessControl.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -555,9 +555,9 @@
         "IAccessControl"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Strings.sol": {
-      "lastModificationDate": 1648391418538,
-      "contentHash": "9c54c6c065d9e590fdcdd72c451425b9",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Strings.sol": {
+      "lastModificationDate": 1650749485512,
+      "contentHash": "88396d54f978442980a1135de6c12ed7",
       "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -590,9 +590,9 @@
         "Strings"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\ERC165.sol": {
-      "lastModificationDate": 1648391417283,
-      "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\ERC165.sol": {
+      "lastModificationDate": 1650749485528,
+      "contentHash": "46a182d4b952cafd81714841bad4edb0",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -627,9 +627,9 @@
         "ERC165"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\IERC165.sol": {
-      "lastModificationDate": 1648391417992,
-      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\IERC165.sol": {
+      "lastModificationDate": 1650749485543,
+      "contentHash": "48674212f545f00ae3efc963b05ffa18",
       "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -662,9 +662,9 @@
         "IERC165"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\IGovernor.sol": {
-      "lastModificationDate": 1648391418296,
-      "contentHash": "1a5be50c2b8436df5ec78772626c13e9",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\IGovernor.sol": {
+      "lastModificationDate": 1650749485184,
+      "contentHash": "c7064cfc89b69ea81ac51081be4902d5",
       "sourceName": "@openzeppelin/contracts/governance/IGovernor.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -699,9 +699,9 @@
         "IGovernor"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\IGovernorTimelock.sol": {
-      "lastModificationDate": 1648391418313,
-      "contentHash": "eebb17e144c4fd58549d815db19552da",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\IGovernorTimelock.sol": {
+      "lastModificationDate": 1650749485215,
+      "contentHash": "d6915294522ca63fd25454f07cdffa5c",
       "sourceName": "@openzeppelin/contracts/governance/extensions/IGovernorTimelock.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -736,9 +736,9 @@
         "IGovernorTimelock"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorTimelockControl.sol": {
-      "lastModificationDate": 1648391417808,
-      "contentHash": "cb4dc50e128ed332c48a1c7d06b4e879",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorTimelockControl.sol": {
+      "lastModificationDate": 1650749485200,
+      "contentHash": "39659f3438b200aba6e1e6c0a89d7566",
       "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -775,9 +775,9 @@
         "GovernorTimelockControl"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\Governor.sol": {
-      "lastModificationDate": 1648391417675,
-      "contentHash": "28514954183285e570ab4889d2dbfe54",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\Governor.sol": {
+      "lastModificationDate": 1650749485168,
+      "contentHash": "e2bb48a98bbbd7e685e4d50a1e26cda7",
       "sourceName": "@openzeppelin/contracts/governance/Governor.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -819,9 +819,9 @@
         "Governor"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\TimelockController.sol": {
-      "lastModificationDate": 1648391418556,
-      "contentHash": "59f5eb55cde7d6d3ae62c45480aff256",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\TimelockController.sol": {
+      "lastModificationDate": 1650749485184,
+      "contentHash": "cc36060cb55b931579227a0cc8f1c585",
       "sourceName": "@openzeppelin/contracts/governance/TimelockController.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -856,9 +856,9 @@
         "TimelockController"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\cryptography\\ECDSA.sol": {
-      "lastModificationDate": 1648391417149,
-      "contentHash": "482bcc512029ecf51ca4ae85cf4667c7",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\cryptography\\ECDSA.sol": {
+      "lastModificationDate": 1650749485512,
+      "contentHash": "856feaa973d4f64f033b37f6fab8dea5",
       "sourceName": "@openzeppelin/contracts/utils/cryptography/ECDSA.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -893,9 +893,9 @@
         "ECDSA"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\cryptography\\draft-EIP712.sol": {
-      "lastModificationDate": 1648391417083,
-      "contentHash": "161aae4dc1450371d0f324488f66a9cf",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\cryptography\\draft-EIP712.sol": {
+      "lastModificationDate": 1650749485512,
+      "contentHash": "c4d862b1c14a8edafe8dea4876e6da26",
       "sourceName": "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -930,9 +930,9 @@
         "EIP712"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SafeCast.sol": {
-      "lastModificationDate": 1648391418474,
-      "contentHash": "cd91252bfcbee6eaba8f5144f504583c",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SafeCast.sol": {
+      "lastModificationDate": 1650749485543,
+      "contentHash": "6a84e7ba3e4a3c314b5608877fcee1ae",
       "sourceName": "@openzeppelin/contracts/utils/math/SafeCast.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -965,9 +965,9 @@
         "SafeCast"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Address.sol": {
-      "lastModificationDate": 1648391416965,
-      "contentHash": "ad714a6368ee7d43cded6bbe8af0b155",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Address.sol": {
+      "lastModificationDate": 1650749485481,
+      "contentHash": "a0b498f62e652a7bc3cd0dd93e2f7254",
       "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1000,9 +1000,9 @@
         "Address"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Timers.sol": {
-      "lastModificationDate": 1648391418564,
-      "contentHash": "ae135102abee8b2fc88eed09a40cdb4c",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Timers.sol": {
+      "lastModificationDate": 1650749485512,
+      "contentHash": "66d5ca29538e000ee684188a60af2aec",
       "sourceName": "@openzeppelin/contracts/utils/Timers.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1035,8 +1035,8 @@
         "Timers"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\governance_standard\\TimeLock.sol": {
-      "lastModificationDate": 1646509528565,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\governance_standard\\TimeLock.sol": {
+      "lastModificationDate": 1650749480497,
       "contentHash": "8469bd1dc6467c942dbeb5f203dd9743",
       "sourceName": "contracts/governance_standard/TimeLock.sol",
       "solcConfig": {
@@ -1072,9 +1072,9 @@
         "TimeLock"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorVotes.sol": {
-      "lastModificationDate": 1648391417816,
-      "contentHash": "232d8cac97c441c8c177aaeeccc94481",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorVotes.sol": {
+      "lastModificationDate": 1650749485200,
+      "contentHash": "61a32f5ea3bbfebf92ad7690986aa997",
       "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorVotes.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1110,9 +1110,9 @@
         "GovernorVotes"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\utils\\IVotes.sol": {
-      "lastModificationDate": 1648391418337,
-      "contentHash": "a036d40989f21d08bb990e68d0088fa1",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\utils\\IVotes.sol": {
+      "lastModificationDate": 1650749485215,
+      "contentHash": "632454fb0829e515659fb86cc45cd18a",
       "sourceName": "@openzeppelin/contracts/governance/utils/IVotes.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1145,9 +1145,9 @@
         "IVotes"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorVotesQuorumFraction.sol": {
-      "lastModificationDate": 1648391417842,
-      "contentHash": "b346cb21204465106e3d5ea7b6264ee9",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorVotesQuorumFraction.sol": {
+      "lastModificationDate": 1650749485215,
+      "contentHash": "8175f6c384e1231df3d82e66b268c2a0",
       "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1182,8 +1182,8 @@
         "GovernorVotesQuorumFraction"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\governance_standard\\GovernorContract.sol": {
-      "lastModificationDate": 1646509483200,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\governance_standard\\GovernorContract.sol": {
+      "lastModificationDate": 1650749480497,
       "contentHash": "563681ff0e715ad46facaa94bd389643",
       "sourceName": "contracts/governance_standard/GovernorContract.sol",
       "solcConfig": {
@@ -1224,9 +1224,9 @@
         "GovernorContract"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorSettings.sol": {
-      "lastModificationDate": 1648391417790,
-      "contentHash": "2c6e87fa9b63c7ef8579eb4ae937d4c2",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorSettings.sol": {
+      "lastModificationDate": 1650749485200,
+      "contentHash": "2742cda9b3a635c3e874cbadb684f7d0",
       "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorSettings.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1261,9 +1261,9 @@
         "GovernorSettings"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorCountingSimple.sol": {
-      "lastModificationDate": 1648391417735,
-      "contentHash": "ea8f93bb65eeed458767a28c233ed3ac",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\governance\\extensions\\GovernorCountingSimple.sol": {
+      "lastModificationDate": 1650749485184,
+      "contentHash": "99c99dcee2b94b6dafc843bb47362f84",
       "sourceName": "@openzeppelin/contracts/governance/extensions/GovernorCountingSimple.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1298,9 +1298,9 @@
         "GovernorCountingSimple"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\ERC20Votes.sol": {
-      "lastModificationDate": 1648391417457,
-      "contentHash": "d750921452f3bf2ab170f55cf4f5dc71",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\ERC20Votes.sol": {
+      "lastModificationDate": 1650749485387,
+      "contentHash": "6da0a8eed2962844c5c2b282fc011af7",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1339,9 +1339,9 @@
         "ERC20Votes"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\draft-ERC20Permit.sol": {
-      "lastModificationDate": 1648391417092,
-      "contentHash": "4e2473d86be8e737a3ba1c38f36a2aab",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\draft-ERC20Permit.sol": {
+      "lastModificationDate": 1650749485403,
+      "contentHash": "8aafc43a543291808d12c642be1570d2",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1380,9 +1380,9 @@
         "ERC20Permit"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
-      "lastModificationDate": 1648391418345,
-      "contentHash": "339b9793dcbd7b5d55af725ef47de74c",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
+      "lastModificationDate": 1650749485543,
+      "contentHash": "fd086f44d8bb114b26d67b8cc4fa55b2",
       "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1415,9 +1415,9 @@
         "Math"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\draft-IERC20Permit.sol": {
-      "lastModificationDate": 1648391417133,
-      "contentHash": "fb77f144244b9ab12533aa6ce85ef8c5",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\draft-IERC20Permit.sol": {
+      "lastModificationDate": 1650749485403,
+      "contentHash": "7d796cee942e6b138485934e561338dc",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1450,9 +1450,9 @@
         "IERC20Permit"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Counters.sol": {
-      "lastModificationDate": 1648391417061,
-      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\node_modules\\@openzeppelin\\contracts\\utils\\Counters.sol": {
+      "lastModificationDate": 1650749485496,
+      "contentHash": "047d6dfb038d43ebdcb4dda73e4acaf1",
       "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1485,9 +1485,9 @@
         "Counters"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\governance_standard\\GOD.sol": {
-      "lastModificationDate": 1648390554674,
-      "contentHash": "c9f07c0200bc561b72d9275720b04df8",
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\governance_standard\\GOD.sol": {
+      "lastModificationDate": 1650751231526,
+      "contentHash": "e1f01aa495050e38d3741cd24e9d4d55",
       "sourceName": "contracts/governance_standard/GOD.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1522,8 +1522,8 @@
         "GOD"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\facets\\Exchange.sol": {
-      "lastModificationDate": 1648131454935,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\facets\\Exchange.sol": {
+      "lastModificationDate": 1650749480465,
       "contentHash": "b576a730f1e747f9590c5c736968fd0d",
       "sourceName": "contracts/diamond/facets/Exchange.sol",
       "solcConfig": {
@@ -1561,8 +1561,8 @@
         "Fac"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\facets\\Factory.sol": {
-      "lastModificationDate": 1648300883048,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\facets\\Factory.sol": {
+      "lastModificationDate": 1650749480465,
       "contentHash": "81852036e2b8e0b2e32d1a260ae751dd",
       "sourceName": "contracts/diamond/facets/Factory.sol",
       "solcConfig": {
@@ -1599,8 +1599,8 @@
         "Factory"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\facets\\OwnershipFacet.sol": {
-      "lastModificationDate": 1646771798500,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\facets\\OwnershipFacet.sol": {
+      "lastModificationDate": 1650749480465,
       "contentHash": "b256e73c91935a9089d259fc04dfb164",
       "sourceName": "contracts/diamond/facets/OwnershipFacet.sol",
       "solcConfig": {
@@ -1637,8 +1637,8 @@
         "OwnershipFacet"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\facets\\GettersAndSetters.sol": {
-      "lastModificationDate": 1648387344169,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\facets\\GettersAndSetters.sol": {
+      "lastModificationDate": 1650749480465,
       "contentHash": "ef59439513d482f831d40348bb5ac22d",
       "sourceName": "contracts/diamond/facets/GettersAndSetters.sol",
       "solcConfig": {
@@ -1674,8 +1674,8 @@
         "GettersAndSetters"
       ]
     },
-    "C:\\Users\\esdra\\Downloads\\dao\\daocontracts\\contracts\\diamond\\facets\\DiamondCutFacet.sol": {
-      "lastModificationDate": 1646771798493,
+    "C:\\Users\\DUAL\\Downloads\\godex\\daocontracts\\contracts\\diamond\\facets\\DiamondCutFacet.sol": {
+      "lastModificationDate": 1650749480450,
       "contentHash": "c5e02833dc353af035e9ee22f71f8af0",
       "sourceName": "contracts/diamond/facets/DiamondCutFacet.sol",
       "solcConfig": {
